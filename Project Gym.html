@@ -1,0 +1,306 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhino Fitness Gym | New Bongaigaon</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial;background:#0e0e0e;color:#fff}
+
+/* HEADER */
+header{
+background:#000;
+padding:18px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;top:0;z-index:1000;
+}
+.logo{color:#2bff88;font-size:24px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin-left:18px}
+
+/* HERO */
+.hero{
+height:420px;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61") center/cover;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;
+}
+.btn{
+background:#2bff88;color:black;
+border:none;padding:14px 24px;
+border-radius:8px;font-weight:bold;
+cursor:pointer;margin-top:20px;
+}
+
+/* SECTIONS */
+.section{padding:60px 20px;max-width:1100px;margin:auto}
+.section h2{text-align:center;color:#2bff88;margin-bottom:30px}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:#171717;
+padding:24px;
+border-radius:12px;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(0,0,0,.7);
+}
+
+/* PRICE */
+.price{font-size:30px;color:#2bff88;margin:10px 0}
+
+/* FORM */
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:6px;
+border:none;
+}
+
+/* ANIMATION */
+.anim{
+opacity:0;
+transform:translateY(40px);
+transition:.8s;
+}
+.anim.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* PULSE */
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
+.pulse{animation:pulse 2s infinite}
+
+/* FOOTER */
+footer{
+background:#000;
+text-align:center;
+padding:25px;
+color:#aaa;
+margin-top:40px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Rhino Fitness Gym</div>
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#plans">Plans</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1 id="typing"></h1>
+<button class="btn pulse" onclick="join()">Join Now</button>
+</section>
+
+<!-- ABOUT -->
+<section class="section anim" id="about">
+<h2>Why Rhino Fitness Gym</h2>
+<div class="grid">
+<div class="card">Modern Equipment</div>
+<div class="card">Clean Environment</div>
+<div class="card">Trainer Guidance</div>
+<div class="card">Beginner Friendly</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section anim" id="services">
+<h2>Programs</h2>
+<div class="grid">
+<div class="card">🏋 Strength Training</div>
+<div class="card">🔥 Fat Loss</div>
+<div class="card">⚡ Cardio</div>
+<div class="card">👨‍🏫 Personal Training</div>
+</div>
+</section>
+
+<!-- COUNTERS -->
+<section class="section anim">
+<h2>Our Results</h2>
+<div class="grid">
+<div class="card">Members<br><span id="c1">0</span>+</div>
+<div class="card">Transformations<br><span id="c2">0</span>+</div>
+<div class="card">Experience Years<br><span id="c3">0</span>+</div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="section anim" id="plans">
+<h2>Membership Plans</h2>
+<div class="grid">
+<div class="card"><h3>Monthly</h3><div class="price">₹1000</div></div>
+<div class="card"><h3>Quarterly</h3><div class="price">₹2000</div></div>
+<div class="card"><h3>Yearly</h3><div class="price">₹10000</div></div>
+</div>
+</section>
+
+<!-- BMI -->
+<section class="section anim">
+<h2>BMI Calculator</h2>
+<div class="card">
+<input id="w" placeholder="Weight kg">
+<input id="h" placeholder="Height cm">
+<button class="btn" onclick="bmi()">Check BMI</button>
+<p id="bmiOut"></p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section anim" id="contact">
+<h2>Contact Rhino Fitness Gym</h2>
+
+<div class="grid">
+
+<div class="card">
+📍 Address<br>
+New Bongaigaon, Chungapota<br>
+Landmark: Near Kalibari School
+</div>
+
+<div class="card">
+📞 Phone: +91 8812095708<br>
+WhatsApp Available
+</div>
+
+<div class="card">
+🕒 Timing<br>
+Morning 5–10 AM<br>
+Evening 4–10 PM
+</div>
+
+</div>
+</section>
+
+<!-- FORM -->
+<section class="section anim">
+<h2>Join / Enquiry Form</h2>
+<div class="card">
+<input id="fname" placeholder="Full Name">
+<input id="fphone" placeholder="Phone Number">
+<input id="fgoal" placeholder="Your Goal">
+<button class="btn" onclick="sendForm()">Submit</button>
+<p id="formMsg"></p>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section anim">
+<h2>FAQ</h2>
+<div class="grid">
+<div class="card">Trainer support available</div>
+<div class="card">Beginner friendly workouts</div>
+<div class="card">Diet guidance provided</div>
+</div>
+</section>
+
+<footer>
+© Rhino Fitness Gym -- New Bongaigaon
+</footer>
+
+<a class="whatsapp" href="https://wa.me/+91 8812095708">💬</a>
+
+<script>
+
+/* TYPING */
+const txt="Build Strength With Rhino Fitness Gym";
+let i=0;
+function type(){
+ if(i<txt.length){
+  typing.innerHTML+=txt[i++];
+  setTimeout(type,60);
+ }
+}
+type();
+
+/* JOIN ALERT */
+function join(){
+ alert("Welcome to Rhino Fitness Gym 💪");
+}
+
+/* SCROLL ANIM */
+const els=document.querySelectorAll(".anim");
+function show(){
+ els.forEach(e=>{
+  if(e.getBoundingClientRect().top < window.innerHeight-80){
+    e.classList.add("show");
+  }
+ });
+}
+window.addEventListener("scroll",show); show();
+
+/* COUNTERS */
+function count(id,max){
+ let n=0;
+ const el=document.getElementById(id);
+ const t=setInterval(()=>{
+  n+=Math.ceil(max/50);
+  if(n>=max){n=max;clearInterval(t);}
+  el.innerText=n;
+ },30);
+}
+count("c1",500);
+count("c2",120);
+count("c3",5);
+
+/* BMI */
+function bmi(){
+ let w=+w.value;
+ let h=+document.getElementById("h").value/100;
+ if(!w||!h) return alert("Enter values");
+ bmiOut.innerText="BMI: "+(w/(h*h)).toFixed(1);
+}
+
+/* FORM */
+function sendForm(){
+ let n=fname.value.trim();
+ let p=fphone.value.trim();
+ if(n.length<3){alert("Enter valid name");return;}
+ if(p.length<10){alert("Enter valid phone");return;}
+ formMsg.innerText="Form submitted ✅ We will contact you soon.";
+}
+
+</script>
+
+</body>
+</html>
